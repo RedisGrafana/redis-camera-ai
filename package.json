@@ -1,0 +1,12 @@
+{
+  "author": "Mikhail Volkov",
+  "description": "Analyzing camera captures using Redis, RedisAI, OpenCV and Grafana",
+  "license": "Apache-2.0",
+  "name": "redis-camera-ai",
+  "scripts": {
+    "redis-cli": "docker exec -it redis redis-cli",
+    "start": "docker-compose pull && docker-compose up",
+    "stop": "docker-compose down"
+  },
+  "version": "1.0.0"
+}
