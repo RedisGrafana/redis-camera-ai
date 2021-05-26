@@ -8,7 +8,7 @@ ARG MODULES=/var/opt/redislabs/lib/modules
 ARG RG=${MODULES}/redisgears.so
 ARG REDIS="redis-server --loadmodule ${RG} PythonHomeDir /opt/redislabs/lib/modules/python3"
 
-ARG DEPS="python python3-pip python3-setuptools libglib2.0-0 libsm6 libxrender1 libxext6 libgomp1"
+ARG DEPS="python3-opencv"
 ARG REQ="numpy \
     Pillow \
     opencv-python"
