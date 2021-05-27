@@ -1,6 +1,6 @@
 {
   "author": "Mikhail Volkov",
-  "description": "Analyzing camera captures using Redis, RedisAI, OpenCV and Grafana",
+  "description": "Analyzing camera captures using RedisAI, OpenCV and Grafana",
   "license": "Apache-2.0",
   "name": "redis-camera-ai",
   "scripts": {

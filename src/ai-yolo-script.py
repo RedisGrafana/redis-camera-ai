@@ -1,33 +1,3 @@
-def nms(boxes):
-    # assuming only one image in one batch
-    boxes = boxes.squeeze()
-    nms_thresh = 0.45
-    conf_thresh = 0.2
-    no_of_valid_elems = (boxes[:, 4] > conf_thresh).nonzero().numel()
-    boxes_confs_inv = 1 - boxes[:, 4]
-    _, sort_ids = torch.sort(boxes_confs_inv)
-    x1 = boxes[:, 0]
-    y1 = boxes[:, 1]
-    x2 = boxes[:, 2]
-    y2 = boxes[:, 3]
-    area = (x2 - x1 + 1) * (y2 - y1 + 1)
-    for index in range(no_of_valid_elems):
-        i = sort_ids[index]
-        new_ind = index + 1
-        if float(boxes[i, 4]) > conf_thresh:
-            xx1 = torch.max(x1[i], x1[sort_ids[new_ind:]])
-            yy1 = torch.max(y1[i], y1[sort_ids[new_ind:]])
-            xx2 = torch.min(x2[i], x2[sort_ids[new_ind:]])
-            yy2 = torch.min(y2[i], y2[sort_ids[new_ind:]])
-            w = torch.max(torch.zeros(1, device=boxes.device), xx2 - xx1 + 1)
-            h = torch.max(torch.zeros(1, device=boxes.device), yy2 - yy1 + 1)
-            overlap = (w * h) / area[sort_ids[new_ind:]]
-            higher_nms_ind = (overlap > nms_thresh).nonzero()
-            boxes[sort_ids[new_ind:][higher_nms_ind]
-                  ] = torch.zeros(7, device=boxes.device)
-    return boxes.unsqueeze(0)
-
-
 def get_region_boxes(output):
     conf_thresh = 0.2
     num_classes = 20
@@ -41,7 +11,6 @@ def get_region_boxes(output):
         anchors[i] = anchors_[i]
 
     batch = output.size(0)
-    # assert(output.size(1) == (5+num_classes)*num_anchors)
     h = output.size(2)
     w = output.size(3)
 
@@ -73,14 +42,17 @@ def get_region_boxes(output):
     cls_max_confs = cls_max_confs.view(-1)
     cls_max_ids = cls_max_ids.view(-1)
 
-    sz_hw = h * w
     boxes = torch.zeros(batch, h * w * num_anchors, 7)
-    # assuming only one image in a batch
+
+    '''
+    Assuming only one image in a batch
+    '''
     x1 = xs / w
     y1 = ys / h
     x2 = ws / w
     y2 = hs / h
     higher_confs = ((det_confs * cls_max_confs) > conf_thresh).nonzero()
+
     no_selected_elems = higher_confs.numel()
     if no_selected_elems > 0:
         boxes[:, 0:no_selected_elems] = torch.stack(
@@ -90,5 +62,42 @@ def get_region_boxes(output):
 
 def boxes_from_tf(output):
     boxes = get_region_boxes(output.permute(0, 3, 1, 2).contiguous())
-    boxes = nms(boxes)
-    return boxes
+
+    '''
+    Assuming only one image in one batch
+    '''
+    boxes = boxes.squeeze()
+    nms_thresh = 0.45
+    conf_thresh = 0.2
+
+    no_of_valid_elems = (boxes[:, 4] > conf_thresh).nonzero().numel()
+    boxes_confs_inv = 1 - boxes[:, 4]
+
+    _, sort_ids = torch.sort(boxes_confs_inv)
+    x1 = boxes[:, 0]
+    y1 = boxes[:, 1]
+    x2 = boxes[:, 2]
+    y2 = boxes[:, 3]
+    area = (x2 - x1 + 1) * (y2 - y1 + 1)
+
+    for index in range(no_of_valid_elems):
+        i = sort_ids[index]
+        new_ind = index + 1
+
+        if float(boxes[i, 4]) > conf_thresh:
+            xx1 = torch.max(x1[i], x1[sort_ids[new_ind:]])
+            yy1 = torch.max(y1[i], y1[sort_ids[new_ind:]])
+            xx2 = torch.min(x2[i], x2[sort_ids[new_ind:]])
+            yy2 = torch.min(y2[i], y2[sort_ids[new_ind:]])
+
+            w = torch.max(torch.zeros(1, device=boxes.device), xx2 - xx1 + 1)
+            h = torch.max(torch.zeros(1, device=boxes.device), yy2 - yy1 + 1)
+            overlap = (w * h) / area[sort_ids[new_ind:]]
+
+            higher_nms_ind = (overlap > nms_thresh).nonzero()
+            boxes[sort_ids[new_ind:][higher_nms_ind]
+                  ] = torch.zeros(7, device=boxes.device)
+
+    print(boxes)
+
+    return boxes.unsqueeze(0)
