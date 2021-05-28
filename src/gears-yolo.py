@@ -182,6 +182,7 @@ def runYolo(x):
     '''
     Iterate boxes to extract the people
     '''
+    draw = ImageDraw.Draw(pilImage)
     for box in scriptBoxes[0]:
 
         '''
@@ -204,7 +205,6 @@ def runYolo(x):
         '''
         Draw boxes on the frame
         '''
-        draw = ImageDraw.Draw(pilImage)
         draw.rectangle(((x1, y1), (x2, y2)), width=5, outline='red')
 
     prf.add('boxes')

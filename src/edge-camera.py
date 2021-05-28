@@ -6,7 +6,7 @@ import urllib.parse
 
 '''
 Capture frames from Camera and save to Redis Streams
-Example: python3 edge-camera.py -u redis://192.168.7.100:6379 --fps 6 --rotate-90-clockwise true
+Example: python3 edge-camera.py -u redis://redis:6379 --fps 6 --rotate-90-clockwise true
 '''
 if __name__ == '__main__':
     '''

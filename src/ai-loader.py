@@ -4,7 +4,7 @@ from urllib.parse import urlparse
 
 '''
 Loading AI model and script
-Example: python3 ai-loader.py -u redis://cluster.remote:6379
+Example: python3 ai-loader.py -u redis://redis:6379
 '''
 if __name__ == '__main__':
     '''

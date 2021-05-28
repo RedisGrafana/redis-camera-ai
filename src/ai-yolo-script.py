@@ -98,6 +98,4 @@ def boxes_from_tf(output):
             boxes[sort_ids[new_ind:][higher_nms_ind]
                   ] = torch.zeros(7, device=boxes.device)
 
-    print(boxes)
-
     return boxes.unsqueeze(0)
