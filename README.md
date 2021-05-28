@@ -36,7 +36,7 @@ docker run -p 6379:6379 --name=redis-opencv ghcr.io/redisgrafana/redis-opencv:la
 
 Check that OpenCV with dependencies downloaded, installed and registered in the RedisGears requirements:
 
-```
+```bash
 cluster.remote:6379> rg.pydumpreqs
 1)  1) "GearReqVersion"
     2) (integer) 1
@@ -81,7 +81,7 @@ cluster.remote:6379> rg.pydumpreqs
 
 The loader script will load AI model and [PyTorch](https://pytorch.org/) script to the Redis database.
 
-```
+```bash
 cd src/
 python3 ai-loader.py -u redis://redis:6379
 ```
@@ -90,7 +90,7 @@ python3 ai-loader.py -u redis://redis:6379
 
 Grafana can be started using Docker Compose or installed locally with [Redis plug-ins for Grafana](https://redisgrafana.github.io) and [Volkov Labs Image panel](https://github.com/VolkovLabs/grafana-image-panel).
 
-```
+```bash
 docker-compose pull
 docker-compose up
 ```
@@ -99,7 +99,7 @@ When starting using Docker Compose, dashboard and plug-ins will be auto-provisio
 
 ## Register RedisGears script
 
-Select `Camera Processing` dashboard and copy-paste `gears-yolo.py` script to RedisGears Script editor panel. Click on the `Run script` button and you should see `StreamReader` Registration.
+Select `Camera Processing` dashboard and copy-paste `gears-yolo.py` script to RedisGears Script editor panel. Click on the `Run script` button and you should see `StreamReader` in the Registration panel.
 
 ![RedisGears Script Editor](https://raw.githubusercontent.com/RedisGrafana/redis-camera-ai/main/images/gears-script-editor.png)
 
@@ -107,8 +107,25 @@ Select `Camera Processing` dashboard and copy-paste `gears-yolo.py` script to Re
 
 Copy script `edge-camera.py` to IoT or any device with camera. Run script by specifying Redis URL, number of frames per second and rotate camera if required.
 
-```
+```bash
 python3 camera.py -u redis://redis:6379 --fps 6 --rotate-90-clockwise true
+```
+
+You should see output with Stream's Id and size of the jpeg file.
+
+```bash
+# python3 camera.py -u redis://red:6379 --fps 6 --rotate-90-clockwise true
+Connected to Redis: ParseResult(scheme='redis', netloc='redis:6379', path='', params='', query='', fragment='')
+id: b'1622145939609-0', size: 5479
+id: b'1622145939769-0', size: 10006
+id: b'1622145939928-0', size: 6709
+id: b'1622145940100-0', size: 6037
+id: b'1622145940266-0', size: 6468
+id: b'1622145940435-0', size: 11607
+id: b'1622145940597-0', size: 5577
+id: b'1622145940768-0', size: 6041
+id: b'1622145940926-0', size: 5570
+id: b'1622145941098-0', size: 5916
 ```
 
 ## Learn more
