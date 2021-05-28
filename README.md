@@ -1,4 +1,4 @@
-# Analyzing camera captures using RedisAI, OpenCV and Grafana
+# Analyzing camera feed using RedisAI, OpenCV and Grafana
 
 ![Camera AI](https://raw.githubusercontent.com/RedisGrafana/redis-camera-ai/main/images/camera-ai.png)
 
@@ -105,7 +105,7 @@ Select `Camera Processing` dashboard and copy-paste `gears-yolo.py` script to Re
 
 ## Start Camera
 
-Copy script `edge-camera.py` to IoT or any device with camera. Run script with specifing Redis URL, number of frames per second and rotate camera if required.
+Copy script `edge-camera.py` to IoT or any device with camera. Run script by specifying Redis URL, number of frames per second and rotate camera if required.
 
 ```
 python3 camera.py -u redis://redis:6379 --fps 6 --rotate-90-clockwise true
