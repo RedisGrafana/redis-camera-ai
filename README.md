@@ -99,7 +99,7 @@ When starting using Docker Compose, dashboard and plug-ins will be auto-provisio
 
 ## Register RedisGears script
 
-Select `Camera Processing` dashboard and copy-paste `gears-yolo.py` script to RedisGears Script editor panel. Click on the `Run script` button and you should see `StreamReader` in the Registration panel.
+Select `Camera Processing` dashboard and copy-paste `gears-yolo.py` script to RedisGears Script editor panel. Click on the `Run script` button and you should see registered script `StreamReader` on the Registrations panel.
 
 ![RedisGears Script Editor](https://raw.githubusercontent.com/RedisGrafana/redis-camera-ai/main/images/gears-script-editor.png)
 
