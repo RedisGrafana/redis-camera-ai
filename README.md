@@ -77,7 +77,7 @@ To load AI model and [PyTorch](https://pytorch.org/) script to the Redis databas
 
 ```bash
 cd ai/
-cat tiny-yolo-voc.pb | redis-cli -h redis -x AI.MODELSET yolo:model TF CPU INPUTS input OUTPUTS output BLOB
+cat tiny-yolo-voc.pb | redis-cli -h redis -x AI.MODELSTORE yolo:model TF CPU INPUTS 1 input OUTPUTS 1 output BLOB
 cat ai-yolo-script.py| redis-cli -h redis -x AI.SCRIPTSET yolo:script CPU SOURCE
 ```
 

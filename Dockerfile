@@ -1,4 +1,4 @@
-FROM redislabs/redisai:latest-cpu-x64-bionic as redisai
+FROM redislabs/redisai:edge-cpu-bionic as redisai
 FROM redislabs/redistimeseries:latest as redistimeseries
 FROM redislabs/redisgears:latest
 
