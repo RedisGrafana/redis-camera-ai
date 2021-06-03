@@ -22,12 +22,6 @@ This project demonstrates how to analyze camera feed stored as [Redis Streams](h
 
 This project provides Docker image with Redis, RedisTimeSeries, RedisGears, RedisAI and installed [OpenCV for Python](https://docs.opencv.org/master/d6/d00/tutorial_py_root.html) library.
 
-Supported platforms are:
-
-- linux/amd64
-- linux/arm64
-- linux/arm
-
 ```bash
 docker run -p 6379:6379 --name=redis-opencv ghcr.io/redisgrafana/redis-opencv:latest
 ```
