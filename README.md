@@ -73,11 +73,12 @@ cluster.remote:6379> rg.pydumpreqs
 
 ## Import AI model and script
 
-The loader script will load AI model and [PyTorch](https://pytorch.org/) script to the Redis database.
+To load AI model and [PyTorch](https://pytorch.org/) script to the Redis database run:
 
 ```bash
-cd src/
-python3 ai-loader.py -u redis://redis:6379
+cd ai/
+cat tiny-yolo-voc.pb | redis-cli -h redis -x AI.MODELSET yolo:model TF CPU INPUTS input OUTPUTS output BLOB
+cat ai-yolo-script.py| redis-cli -h redis -x AI.SCRIPTSET yolo:script CPU SOURCE
 ```
 
 ## Start Grafana
@@ -99,10 +100,12 @@ Select `Camera Processing` dashboard and copy-paste `gears-yolo.py` script to Re
 
 ## Start Camera
 
-Copy script `edge-camera.py` to IoT or any device with camera. Run script by specifying Redis URL, number of frames per second and rotate camera if required.
+Copy script `edge-camera.py` and `requirements.txt` to IoT or any device with camera. Run script by specifying Redis URL, number of frames per second and rotate camera if required.
 
 ```bash
-python3 camera.py -u redis://redis:6379 --fps 6 --rotate-90-clockwise true
+cd camera/
+pip3 install -r requirements.txt
+python3 edge-camera.py -u redis://redis:6379 --fps 6 --rotate-90-clockwise true
 ```
 
 You should see output with Stream's Id and size of the jpeg file.
