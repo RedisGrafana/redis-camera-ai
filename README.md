@@ -1,6 +1,6 @@
 # Analyzing camera feed using RedisAI, OpenCV and Grafana
 
-![Camera AI](https://raw.githubusercontent.com/RedisGrafana/redis-camera-ai/main/images/camera-ai.png)
+![Redis-Camera-AI](https://raw.githubusercontent.com/RedisGrafana/redis-camera-ai/main/images/batman-ai.gif)
 
 [![Grafana 7](https://img.shields.io/badge/Grafana-7-orange)](https://www.grafana.com)
 [![Redis Data Source](https://img.shields.io/badge/dynamic/json?color=blue&label=Redis%20Data%20Source&query=%24.version&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fredis-datasource)](https://grafana.com/grafana/plugins/redis-datasource)
@@ -94,9 +94,13 @@ When starting using Docker Compose, dashboard and plug-ins will be auto-provisio
 
 ## Register RedisGears script
 
-Select `Camera Processing` dashboard and copy-paste `gears-yolo.py` script to RedisGears Script editor panel. Click on the `Run script` button and you should see registered script `StreamReader` on the Registrations panel.
+Select `Camera Processing` dashboard and copy-paste `gears-yolo.py` script to RedisGears Script editor panel.
 
 ![RedisGears Script Editor](https://raw.githubusercontent.com/RedisGrafana/redis-camera-ai/main/images/gears-script-editor.png)
+
+Click on the `Run script` button and you should see registered script `StreamReader` in the Registrations panel.
+
+![Camera AI](https://raw.githubusercontent.com/RedisGrafana/redis-camera-ai/main/images/camera-ai.png)
 
 ## Start Camera
 
