@@ -5,7 +5,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "7.5.7"
+      "version": "8.0.0"
     },
     {
       "type": "datasource",
@@ -22,8 +22,8 @@
     {
       "type": "panel",
       "id": "volkovlabs-image-panel",
-      "name": "volkovlabs-image-panel",
-      "version": "1.0.0"
+      "name": "Base64 Image/PDF",
+      "version": "1.0.1"
     }
   ],
   "annotations": {
@@ -43,7 +43,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1622127451824,
+  "iteration": 1623265798336,
   "links": [],
   "panels": [
     {
@@ -98,7 +98,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.7",
+      "pluginVersion": "8.0.0",
       "targets": [
         {
           "command": "xinfoStream",
@@ -159,7 +159,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "7.5.7",
+      "pluginVersion": "8.0.0",
       "targets": [
         {
           "command": "ts.get",
@@ -179,10 +179,6 @@
     },
     {
       "datasource": "$redis",
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 20,
         "w": 24,
@@ -211,7 +207,7 @@
       "type": "volkovlabs-image-panel"
     }
   ],
-  "schemaVersion": 27,
+  "schemaVersion": 30,
   "style": "dark",
   "tags": [],
   "templating": {
