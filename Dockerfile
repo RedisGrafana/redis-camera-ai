@@ -1,6 +1,6 @@
 FROM redislabs/redisai:edge-cpu-bionic as redisai
-FROM redislabs/redistimeseries:latest as redistimeseries
-FROM redislabs/redisgears:latest
+FROM redislabs/redistimeseries:edge as redistimeseries
+FROM redislabs/redisgears:edge
 
 ENV LD_LIBRARY_PATH=/usr/lib/redis/modules
 
