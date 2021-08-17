@@ -1,6 +1,13 @@
 # Change Log
 
-## v1.1.0 (IN PROGRESS)
+## v1.2.0 (IN PROGRESS)
+
+### Features / Enhancements
+
+- Moving to Edge docker build (#7)
+- Add Gears Python plugin to Docker image
+
+## v1.1.0 (2021-06-09)
 
 ### Features / Enhancements
 
