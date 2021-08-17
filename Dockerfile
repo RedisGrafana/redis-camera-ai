@@ -35,4 +35,4 @@ ENTRYPOINT ["redis-server"]
 CMD ["--loadmodule", "/usr/lib/redis/modules/redistimeseries.so", \
     "--loadmodule", "/usr/lib/redis/modules/redisai.so", \
     "--loadmodule", "/var/opt/redislabs/lib/modules/redisgears.so", \
-    "PythonHomeDir", "/opt/redislabs/lib/modules/python3"]
+    "Plugin", "/var/opt/redislabs/modules/rg/plugin/gears_python.so"]
