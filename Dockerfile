@@ -6,7 +6,7 @@ ENV LD_LIBRARY_PATH=/usr/lib/redis/modules
 
 ARG MODULES=/var/opt/redislabs/lib/modules
 ARG RG=${MODULES}/redisgears.so
-ARG REDIS="redis-server --loadmodule ${RG} PythonHomeDir /opt/redislabs/lib/modules/python3"
+ARG REDIS="redis-server --loadmodule ${RG} Plugin /var/opt/redislabs/modules/rg/plugin/gears_python.so"
 
 ARG DEPS="python3-opencv"
 ARG REQ="numpy \
