@@ -2,7 +2,7 @@
 
 ![Redis-Camera-AI](https://raw.githubusercontent.com/RedisGrafana/redis-camera-ai/main/images/batman-ai.gif)
 
-[![Grafana 7](https://img.shields.io/badge/Grafana-7-orange)](https://www.grafana.com)
+[![Grafana 8](https://img.shields.io/badge/Grafana-8-orange)](https://www.grafana.com)
 [![Redis Data Source](https://img.shields.io/badge/dynamic/json?color=blue&label=Redis%20Data%20Source&query=%24.version&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fredis-datasource)](https://grafana.com/grafana/plugins/redis-datasource)
 [![Redis Application plug-in](https://img.shields.io/badge/dynamic/json?color=blue&label=Redis%20Application%20plug-in&query=%24.version&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fredis-app)](https://grafana.com/grafana/plugins/redis-app)
 [![Docker](https://github.com/RedisGrafana/redis-camera-ai/actions/workflows/docker.yml/badge.svg)](https://github.com/RedisGrafana/redis-camera-ai/actions/workflows/docker.yml)
