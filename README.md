@@ -13,6 +13,13 @@ This project demonstrates how to analyze camera feed stored as [Redis Streams](h
 
 ![Redis-Camera-AI](https://raw.githubusercontent.com/RedisGrafana/redis-camera-ai/main/images/redis-camera-ai.png)
 
+## Demo
+
+Demo is available on [demo.volkovlabs.io](https://demo.volkovlabs.io):
+
+- [Redis Overview dashboard](https://demo.volkovlabs.io/d/TgibHBv7z/redis-overview?orgId=1&refresh=1h)
+- [Camera Feed dashboard](https://demo.volkovlabs.io/d/DtsbVE3Mk/analyzing-camera-feed-with-ai?orgId=1)
+
 ## Requirements
 
 - [Docker](https://docker.com) to start Redis and Grafana.
