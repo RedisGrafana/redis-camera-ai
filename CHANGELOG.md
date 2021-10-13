@@ -1,6 +1,6 @@
 # Change Log
 
-## v1.3.0 (IN PROGRESS)
+## v1.3.0 (2021-10-13)
 
 ### Features / Enhancements
 

@@ -5,7 +5,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "8.1.4"
+      "version": "8.2.1"
     },
     {
       "type": "datasource",
@@ -46,11 +46,13 @@
     ]
   },
   "editable": true,
+  "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1632251688059,
+  "iteration": 1634157952377,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
       "datasource": "$redis",
@@ -104,7 +106,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.4",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "command": "xinfoStream",
@@ -118,6 +120,7 @@
         }
       ],
       "title": "Frames Queue",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -165,7 +168,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.1.4",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "command": "ts.get",
@@ -181,6 +184,7 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "People Count",
+      "transparent": true,
       "type": "stat"
     },
     {
@@ -214,10 +218,11 @@
         }
       ],
       "title": "Camera",
+      "transparent": true,
       "type": "volkovlabs-image-panel"
     }
   ],
-  "schemaVersion": 30,
+  "schemaVersion": 31,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -252,5 +257,5 @@
   "timezone": "",
   "title": "Camera",
   "uid": "gohAty3Mk",
-  "version": 1
+  "version": 2
 }
