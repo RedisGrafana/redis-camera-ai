@@ -5,7 +5,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "8.1.4"
+      "version": "8.2.1"
     },
     {
       "type": "datasource",
@@ -64,11 +64,13 @@
     ]
   },
   "editable": true,
+  "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1632251645770,
+  "iteration": 1634158043725,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
       "datasource": "$redis",
@@ -571,7 +573,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "8.1.4",
+      "pluginVersion": "8.2.1",
       "targets": [
         {
           "command": "rg.dumpregistrations",
@@ -734,7 +736,7 @@
       "type": "redis-gears-panel"
     }
   ],
-  "schemaVersion": 30,
+  "schemaVersion": 31,
   "style": "dark",
   "tags": [],
   "templating": {
