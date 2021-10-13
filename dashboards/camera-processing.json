@@ -5,7 +5,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "8.0.0"
+      "version": "8.1.4"
     },
     {
       "type": "datasource",
@@ -41,7 +41,7 @@
       "type": "panel",
       "id": "volkovlabs-image-panel",
       "name": "Base64 Image/PDF",
-      "version": "1.0.1"
+      "version": "2.1.1"
     }
   ],
   "annotations": {
@@ -53,6 +53,12 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
@@ -61,7 +67,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1623266058782,
+  "iteration": 1632251645770,
   "links": [],
   "panels": [
     {
@@ -74,8 +80,12 @@
       },
       "id": 2,
       "options": {
+        "height": 0,
+        "heightMode": "auto",
         "name": "img",
-        "type": "image/jpeg"
+        "type": "image/jpeg",
+        "width": 0,
+        "widthMode": "auto"
       },
       "pluginVersion": "7.5.7",
       "targets": [
@@ -561,7 +571,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "8.0.0",
+      "pluginVersion": "8.1.4",
       "targets": [
         {
           "command": "rg.dumpregistrations",
@@ -759,5 +769,5 @@
   "timezone": "",
   "title": "Camera Processing",
   "uid": "DtsbVE3Mk",
-  "version": 2
+  "version": 1
 }
