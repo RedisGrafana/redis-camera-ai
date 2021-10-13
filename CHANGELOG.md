@@ -4,6 +4,12 @@
 
 ### Features / Enhancements
 
+- Update dashboards for Grafana 8.2 #9
+
+### Bugfix
+
+- Using opencv-python-headless Python library for Docker
+
 ## v1.2.0 (2021-08-18)
 
 ### Features / Enhancements
